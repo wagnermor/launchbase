@@ -1,56 +1,87 @@
-const alunosDaTurmaA = [
+const classA = [
     {
-        nome: "Mayk",
-        nota: 0
+        name: "Mayk",
+        grade: 10
     },
     {
-        nome: "Diego",
-        nota: 0
+        name: "Diego",
+        grade: 1
     },
     {
-        nome: "Dimayk",
-        nota: 0
+        name: "Dimayk",
+        grade: 10
     },
     {
-        nome: "Diana",
-        nota: 4
+        name: "Diana",
+        grade: 1
+    },
+    {
+        name: "Rose",
+        grade: 10
+    },
+    {
+        name: "Jusiele",
+        grade: 1
     }
 ];
 
-const alunosDaTurmaB = [
+const classB = [
     {
-        nome: "Wagner",
-        nota: 10
+        name: "Wagner",
+        grade: 10
     },
     {
-        nome: "Ale",
-        nota: 10
+        name: "Ale",
+        grade: 1
     },
     {
-        nome: "Thiago",
-        nota: 10
+        name: "Thiago",
+        grade: 10
     }
 ];
 
-function calculaMedia(aluno) {
-    // return(aluno[0].nota + aluno[1].nota + aluno[2].nota) / 3;
-    let alunos = aluno.length
-    let notas = 0
-    for(let i = 0; i < alunos; i++) {
-        notas += aluno[i].nota
+function calculateAverage(student) {
+    // return(student[0].grade + student[1].grade + student[2].grade) / 3;
+    let students = student.length
+    let grades = 0
+    
+    for(let i = 0; i < students; i++) {
+        grades += student[i].grade
     }
-    return notas / alunos
+    return grades / students
 };
 
-function mostraMensagem(media, turma) {
-    if(media > 5) {
-        console.log(`A média da turma ${turma} foi de ${media} :). Parabéns!`);
+function sendMessage(average, turma) {
+    if(average > 5) {
+        console.log(`${turma} average: ${average.toFixed(1)} :). Congrats!`);
     } else {
-        console.log(`A média da turma ${turma} é menor que 5!\nA média foi de ${media}:(`);
+        console.log(`${turma} average: ${average.toFixed(1)}. Is not good!`);
     }
 }
 
-const mediaAlunosDaTurmaA = calculaMedia(alunosDaTurmaA);
-const mediaAlunosDaTurmaB = calculaMedia(alunosDaTurmaB);
+const averageAlunosDaTurmaA = calculateAverage(classA);
+const averageAlunosDaTurmaB = calculateAverage(classB);
 
-mostraMensagem(mediaAlunosDaTurmaA, "A");
+function markAsFlunkeds(students) {
+    student.flunked = false
+    if(student.grade < 5) {
+        student.flunked = true
+    }
+}
+
+function sendMessageReprovado(student) {
+    if(student.flunked) {
+        console.log(`O(a) student(a) ${student.name} flunked!`)
+    }
+}
+
+function studentsReprovados(students) {
+    for(student of students) {
+        markAsFlunkeds(student)
+        sendMessageReprovado(student)
+    }
+}
+
+sendMessage(averageAlunosDaTurmaA, "A");
+
+studentsReprovados(classA)
