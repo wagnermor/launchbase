@@ -17,6 +17,7 @@ body {
     color: #fff;
 }
 header{
+    box-sizing: border-box;
     padding: 32px;
     border-bottom: 1px solid #333;
     background-color: rgba(0, 0, 0, 0.1);
@@ -97,6 +98,9 @@ header{
 .card-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+.card-min {
+    padding: 5px;
 }
 .card-price {
     background-color: var(--color-rocket);
