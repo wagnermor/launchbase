@@ -9,11 +9,23 @@ server.use(express.static('public'))
 server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-    express: server
+    express: server,
+    autoescape: false
 })
 
 server.get("/", function (req, res) {
-    return res.render("about")
+    const about = {
+        avatar_url: "https://avatars3.githubusercontent.com/u/47096330?s=460&u=3195f362cc6afec6a72666f33ebff54fa520e12d&v=4",
+        name: "Wagner Moreira",
+        role: "Programador",
+        description: 'Programador front-end, desenvolvendo novas habilidades para solução de desafios na web. Estudante na <a href="https://rocketseat.com.br" target="_blank">Rocketseat</a>.',
+        links: [
+            { name: "Github", url: "https://github.com/wagnermor"},
+            { name: "Twitter", url: "https://twitter.com/wagnerianomor"},
+            { name: "Linkedin", url: "https://linkedin.com/in/wagnermor"}
+        ]
+    }
+    return res.render("about", { about: about })//{ about: about } = { chave: variável }
 })
 
 server.get("/portfolio", function (req, res) {
