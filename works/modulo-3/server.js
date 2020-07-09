@@ -33,7 +33,25 @@ server.get("/portfolio", function (req, res) {
     return res.render("portfolio", {items: videos})
 })
 
-server.get("/video", function(req,res) {
+// server.get("/video", function (req, res) {
+
+// })
+
+server.get("/video", function (req, res) {
+    const id = req.query.id
+
+    const video = videos.find(function(video) {
+        return video.id == id
+    })
+
+    if (!video) {
+        return res.send("Video not found!")
+    }
+
+    return res.render("video", { item: video })
+})
+
+server.get("/teste", function (req, res) {
     const id = req.query.id
 
     const video = videos.find(function(video) {
@@ -41,11 +59,11 @@ server.get("/video", function(req,res) {
             return true
         }
     })
-
     if (!video) {
         return res.send("Video not found!")
     }
-    return res.render("video", { video })
+
+    return res.render("teste", {item: video})
 })
 
 server.listen(5000, function() {
