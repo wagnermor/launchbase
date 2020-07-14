@@ -2,6 +2,7 @@
 
 :root {
     --rocketseat-color: #7159c1;
+    --second-color: greenyellow;
 }
 
 * {
@@ -63,9 +64,6 @@ header {
 
 /* ==== CARD ==== */
 .card {
-    border-radius: 8px;
-    color: #000;
-    background-color: #fff;
     width: 800px;
     min-height: 400px;
 
@@ -93,14 +91,14 @@ header {
 }
 
 .avatar {
-    background-image: url('https://source.unsplash.com/collection/8969654');
+    background-image: url('https://source.unsplash.com/collection/9647150');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .details {
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 4px 4px 0;
     text-align: left;
     padding: 32px;
     background-color:#fff;
@@ -128,9 +126,14 @@ header {
     font-weight: bold;
     font-size: 18px;
 }
-.details .item div:nth-child(2) span {
-    display: block;
-    background-color: greenyellow;
+.details .item span {
+    padding: 8px 16px;
+    border-radius: 16px;
+    display: inline-block;
+    margin: 8px 4px 0 0;
+    background-color: var(--second-color);
+    text-transform: uppercase;
+    font-size: 12px;
 }
 .details h3 {
     text-transform: uppercase;
