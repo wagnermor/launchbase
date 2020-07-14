@@ -6,10 +6,13 @@ exports.post = function(req, res) {
     const keys = Object.keys(req.body)
 
     for(key of keys) {
-        if(req.body[key] =="") {
+        if(req.body[key] == "") {
             return res.send('Por favor, preencha todos os campos!')
         }
     }
+
+    req.body.birth = Date.parse(req.body.birth)
+    req.body.created_at = Date.now()
 
     data.instructors.push(req.body)
 
@@ -19,5 +22,5 @@ exports.post = function(req, res) {
         return res.redirect("/instructors")
     })
 
-    // return res.send(req.body)
+    return res.send(req.body)///imprime o objeto na tela
 }
