@@ -7,12 +7,12 @@ exports.show = function(req, res) {
     const { id } = req. params
 
     const foundInstructor = data.instructors.find(function(instructor) {
-        return instructor.id == id
+        return id == instructor.id
     })
 
     if (!foundInstructor) return res.send("Instructor not found guys!")
 
-    return res. send(foundInstructor)
+    return res.render("instructors/show", { instructor, foundInstructor })
 }
 // create
 exports.post = function(req, res) {
