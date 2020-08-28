@@ -4,5 +4,5 @@
 </h1>
 
 ## Sobre
-Desafios realizados dentro do curso LaunchBase Bootcamp da Rocketseat.
+Desafios do curso LaunchBase Bootcamp da Rocketseat.
 
