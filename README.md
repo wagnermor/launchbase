@@ -1,4 +1,4 @@
-## LaunchBase Bootcamp | Desafios
+## LaunchBase | Desafios
 <h1 aling='center'>
     <img src="./public/launchbase-bootcamp.jpg">
 </h1>
